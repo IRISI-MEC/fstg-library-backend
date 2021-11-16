@@ -1,7 +1,7 @@
 package com.mec.libapi.infrastructure.converter.bookModule;
 
 import com.mec.libapi.domain.pojo.bookModule.NCase;
-import com.mec.libapi.infrastructure.entity.bookModule.NCaseEntity;
+import com.mec.libapi.infrastructure.entity.bookModule.NumCaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,8 @@ public class NCaseConverter {
     @Qualifier("InstanceInfConverter")
     InstanceConverter instanceConverter;
 
-    public NCaseEntity toEntity(NCase nCase, Boolean convertInstances) {
-        NCaseEntity nCaseEntity = NCaseEntity.builder()
+    public NumCaseEntity toEntity(NCase nCase, Boolean convertInstances) {
+        NumCaseEntity nCaseEntity = NumCaseEntity.builder()
                 .id(nCase.getId())
                 .code(nCase.getCode())
                 .build();
@@ -25,7 +25,7 @@ public class NCaseConverter {
         return nCaseEntity;
     }
 
-    public NCase toPojo(NCaseEntity nCaseEntity, Boolean convertInstances) {
+    public NCase toPojo(NumCaseEntity nCaseEntity, Boolean convertInstances) {
         NCase nCase = new NCase();
         nCase.setId(nCaseEntity.getId());
         nCase.setCode(nCaseEntity.getCode());

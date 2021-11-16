@@ -2,16 +2,17 @@ package com.mec.libapi.infrastructure.dao.impl.bookModule;
 
 import com.mec.libapi.domain.pojo.bookModule.NCase;
 import com.mec.libapi.infrastructure.converter.bookModule.NCaseConverter;
+import com.mec.libapi.infrastructure.dao.core.AbstractFacadeImpl;
 import com.mec.libapi.infrastructure.dao.facade.bookModule.NCaseFacade;
 import com.mec.libapi.infrastructure.dao.repository.bookModule.NCaseRepository;
-import com.mec.libapi.infrastructure.entity.bookModule.NCaseEntity;
+import com.mec.libapi.infrastructure.entity.bookModule.NumCaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class NCaseFacadeImpl implements NCaseFacade {
+public class NCaseFacadeImpl extends AbstractFacadeImpl implements NCaseFacade {
 
     @Autowired
     private NCaseRepository repository;
@@ -26,7 +27,7 @@ public class NCaseFacadeImpl implements NCaseFacade {
 
     @Override
     public NCase findById(Long id) {
-        Optional<NCaseEntity> nCaseEntity = repository.findById(id);
+        Optional<NumCaseEntity> nCaseEntity = repository.findById(id);
         return nCaseEntity.map(entity -> nCaseConverter.toPojo(entity, true)).orElse(null);
     }
 
@@ -42,7 +43,7 @@ public class NCaseFacadeImpl implements NCaseFacade {
 
     @Override
     public NCase findByCode(String code) {
-        Optional<NCaseEntity> nCaseEntity = repository.findByCode(code);
+        Optional<NumCaseEntity> nCaseEntity = repository.findByCode(code);
         return nCaseEntity.map(entity -> nCaseConverter.toPojo(entity, true)).orElse(null);
     }
 }

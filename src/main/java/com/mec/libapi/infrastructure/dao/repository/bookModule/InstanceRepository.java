@@ -2,7 +2,7 @@ package com.mec.libapi.infrastructure.dao.repository.bookModule;
 
 import com.mec.libapi.infrastructure.entity.bookModule.BookEntity;
 import com.mec.libapi.infrastructure.entity.bookModule.InstanceEntity;
-import com.mec.libapi.infrastructure.entity.bookModule.NCaseEntity;
+import com.mec.libapi.infrastructure.entity.bookModule.NumCaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +27,6 @@ public interface InstanceRepository extends JpaRepository<InstanceEntity, Long> 
 
     Stream<InstanceEntity> findByBookEntity(BookEntity bookEntity);
 
-    Stream<InstanceEntity> findByNCaseEntity(NCaseEntity nCaseEntity);
+    Stream<InstanceEntity> findByNumCaseEntity(NumCaseEntity numCaseEntity);
 
 }

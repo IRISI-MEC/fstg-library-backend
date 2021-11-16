@@ -4,6 +4,7 @@ import com.mec.libapi.domain.pojo.bookModule.Book;
 import com.mec.libapi.domain.pojo.bookModule.Speciality;
 import com.mec.libapi.infrastructure.converter.bookModule.BookConverter;
 import com.mec.libapi.infrastructure.converter.bookModule.SpecialityConverter;
+import com.mec.libapi.infrastructure.dao.core.AbstractFacadeImpl;
 import com.mec.libapi.infrastructure.dao.facade.bookModule.BookFacade;
 import com.mec.libapi.infrastructure.dao.repository.bookModule.BookRepository;
 import com.mec.libapi.infrastructure.entity.bookModule.BookEntity;
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class BookFacadeImpl implements BookFacade {
+public class BookFacadeImpl extends AbstractFacadeImpl implements BookFacade {
 
     @Autowired
     private BookRepository repository;

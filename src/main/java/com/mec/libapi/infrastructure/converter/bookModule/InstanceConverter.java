@@ -36,7 +36,7 @@ public class InstanceConverter {
             instanceEntity.setBookEntity(bookConverter.toEntity(instance.getBook(), false, true));
 
         if (convertNCase)
-            instanceEntity.setNCaseEntity(nCaseConverter.toEntity(instance.getnCase(), false));
+            instanceEntity.setNumCaseEntity(nCaseConverter.toEntity(instance.getnCase(), false));
 
         return instanceEntity;
     }
@@ -59,7 +59,7 @@ public class InstanceConverter {
             instance.setBook(bookConverter.toPojo(instanceEntity.getBookEntity(), false, true));
 
         if (convertNCase)
-            instance.setnCase(nCaseConverter.toPojo(instanceEntity.getNCaseEntity(), false));
+            instance.setnCase(nCaseConverter.toPojo(instanceEntity.getNumCaseEntity(), false));
 
         return instance;
     }

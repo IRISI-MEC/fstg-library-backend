@@ -2,6 +2,7 @@ package com.mec.libapi.infrastructure.dao.impl.bookModule;
 
 import com.mec.libapi.domain.pojo.bookModule.Detail;
 import com.mec.libapi.infrastructure.converter.bookModule.DetailConverter;
+import com.mec.libapi.infrastructure.dao.core.AbstractFacadeImpl;
 import com.mec.libapi.infrastructure.dao.facade.bookModule.DetailFacade;
 import com.mec.libapi.infrastructure.dao.repository.bookModule.DetailRepository;
 import com.mec.libapi.infrastructure.entity.bookModule.DetailEntity;
@@ -11,7 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-public class DetailFacadeImpl implements DetailFacade {
+public class DetailFacadeImpl extends AbstractFacadeImpl implements DetailFacade {
 
     @Autowired
     private DetailRepository repository;

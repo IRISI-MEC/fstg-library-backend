@@ -6,11 +6,12 @@ import com.mec.libapi.domain.pojo.bookModule.NCase;
 import com.mec.libapi.infrastructure.converter.bookModule.BookConverter;
 import com.mec.libapi.infrastructure.converter.bookModule.InstanceConverter;
 import com.mec.libapi.infrastructure.converter.bookModule.NCaseConverter;
+import com.mec.libapi.infrastructure.dao.core.AbstractFacadeImpl;
 import com.mec.libapi.infrastructure.dao.facade.bookModule.InstanceFacade;
 import com.mec.libapi.infrastructure.dao.repository.bookModule.InstanceRepository;
 import com.mec.libapi.infrastructure.entity.bookModule.BookEntity;
 import com.mec.libapi.infrastructure.entity.bookModule.InstanceEntity;
-import com.mec.libapi.infrastructure.entity.bookModule.NCaseEntity;
+import com.mec.libapi.infrastructure.entity.bookModule.NumCaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -20,7 +21,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class InstanceFacadeImpl implements InstanceFacade {
+public class InstanceFacadeImpl extends AbstractFacadeImpl implements InstanceFacade {
 
     @Autowired
     private InstanceRepository repository;
@@ -101,7 +102,7 @@ public class InstanceFacadeImpl implements InstanceFacade {
 
     @Override
     public Stream<Instance> findByNCase(NCase nCase) {
-        NCaseEntity nCaseEntity = nCaseConverter.toEntity(nCase, false);
-        return repository.findByNCaseEntity(nCaseEntity).map(entity -> instanceConverter.toPojo(entity, false, true));
+        NumCaseEntity nCaseEntity = nCaseConverter.toEntity(nCase, false);
+        return repository.findByNumCaseEntity(nCaseEntity).map(entity -> instanceConverter.toPojo(entity, false, true));
     }
 }

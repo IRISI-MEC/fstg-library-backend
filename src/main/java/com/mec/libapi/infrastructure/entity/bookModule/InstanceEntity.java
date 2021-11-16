@@ -10,7 +10,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "instances")
+//@Table(name = "instances")
 @Data
 @Builder
 @NoArgsConstructor
@@ -37,15 +37,12 @@ public class InstanceEntity {
     private Availability availability;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "book_id")
     private BookEntity bookEntity;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "num_case")
-    private NCaseEntity nCaseEntity;
+    private NumCaseEntity numCaseEntity;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "details_id")
     private DetailEntity detailEntity;
 
     //STOPSHIP

@@ -6,9 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "details")
+//@Table(name = "details")
 @Data
 @Builder
 @NoArgsConstructor

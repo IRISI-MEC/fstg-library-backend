@@ -1,4 +1,4 @@
-package com.mec.libapi.infrastructure.entity.bookModule;
+package com.mec.libapi.infrastructure.entity.userModule;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,24 +6,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
-@Table(name = "num_cases")
-@Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class NCaseEntity {
-
+@Data
+@Builder
+//@Table(name = "departments")
+@Entity
+public class DepartmentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(unique = true)
-    private String code;
-
-    @OneToMany(mappedBy = "nCaseEntity")
-    private List<InstanceEntity> instanceEntities;
-
+    private String label;
+    private String description;
 }
