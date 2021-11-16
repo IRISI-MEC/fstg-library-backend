@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Builder
-//@Table(name = "departments")
+@Table(name = "departments")
 @Entity
 public class DepartmentEntity {
     @Id

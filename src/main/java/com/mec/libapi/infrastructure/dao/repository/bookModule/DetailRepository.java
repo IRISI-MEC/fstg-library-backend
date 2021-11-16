@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface DetailRepository extends JpaRepository<DetailEntity, Long> {
 
-    Optional<DetailEntity> findByBuyTypeAndConditionAndDeliverySlipAndProvider(String butType, String condition, String dSlip, String provider);
+    Optional<DetailEntity> findByBuyTypeAndStateAndDeliverySlipAndProvider(String butType, String condition, String dSlip, String provider);
 
 }

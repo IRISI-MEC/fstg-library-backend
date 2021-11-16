@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-//@Table(name = "num_cases")
+@Table(name = "num_cases")
 @Data
 @Builder
 @NoArgsConstructor

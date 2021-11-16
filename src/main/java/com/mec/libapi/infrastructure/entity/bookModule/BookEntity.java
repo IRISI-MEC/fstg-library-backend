@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-//@Table(name = "books")
+@Table(name = "books")
 @Data
 @Builder
 @NoArgsConstructor
@@ -31,7 +31,7 @@ public class BookEntity {
     private List<InstanceEntity> instanceEntities;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "speciality")
+//    @JoinColumn(name = "speciality")
     private SpecialityEntity specialityEntity;
 
     //STOPSHIP

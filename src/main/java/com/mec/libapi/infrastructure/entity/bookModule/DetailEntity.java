@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-//@Table(name = "details")
+@Table(name = "details")
 @Data
 @Builder
 @NoArgsConstructor
@@ -21,7 +21,7 @@ public class DetailEntity {
     private Long id;
 
     // new, used
-    private String condition;
+    private String state;
     private String buyType;
 
     // library provider

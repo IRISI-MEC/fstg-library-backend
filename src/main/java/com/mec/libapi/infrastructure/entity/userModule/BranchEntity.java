@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Builder
-//@Table(name = "branches")
+@Table(name = "branches")
 @Entity
 public class BranchEntity {
     @Id

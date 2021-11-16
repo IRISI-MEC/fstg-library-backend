@@ -11,7 +11,7 @@ public class DetailConverter {
         return DetailEntity.builder()
                 .id(detail.getId())
                 .buyType(detail.getBuyType())
-                .condition(detail.getCondition())
+                .state(detail.getCondition())
                 .deliverySlip(detail.getDeliverySlip())
                 .provider(detail.getProvider())
                 .build();
@@ -21,7 +21,7 @@ public class DetailConverter {
         Detail detail = new Detail();
         detail.setId(detailEntity.getId());
         detail.setBuyType(detailEntity.getBuyType());
-        detail.setCondition(detailEntity.getCondition());
+        detail.setCondition(detailEntity.getState());
         detail.setDeliverySlip(detailEntity.getDeliverySlip());
         detail.setProvider(detailEntity.getProvider());
         return detail;

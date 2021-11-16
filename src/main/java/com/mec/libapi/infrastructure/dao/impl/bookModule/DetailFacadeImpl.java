@@ -43,7 +43,7 @@ public class DetailFacadeImpl extends AbstractFacadeImpl implements DetailFacade
 
     @Override
     public Detail findByAllAttributes(String butType, String condition, String dSlip, String provider) {
-        Optional<DetailEntity> detailEntity = repository.findByBuyTypeAndConditionAndDeliverySlipAndProvider(butType, condition, dSlip, provider);
+        Optional<DetailEntity> detailEntity = repository.findByBuyTypeAndStateAndDeliverySlipAndProvider(butType, condition, dSlip, provider);
         return detailEntity.map(entity -> detailConverter.toPojo(entity)).orElse(null);
     }
 }
